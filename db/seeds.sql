@@ -6,3 +6,6 @@ VALUES ("Vegan McWhopper", true);
 
 INSERT INTO burgers (burger_name, devored)
 VALUES ("My Last Burger", true);
+
+INSERT INTO burgers (burger_name, devored)
+VALUES ("Baby Burger", true);

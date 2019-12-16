@@ -7,6 +7,31 @@
     <title>BURGER CONSUMER</title>
 </head>
 <body>
-    <h1>Server Connected</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" id="top-bar">
+                <h1>BURGER DEVOURER</h1>
+            </div>
+            <div class="col-6 text-center" class="task">
+                <div class="row">
+                    {{#each burgerData}}
+                        {{#unless this.devoured}}
+                        <div class="col-9 text-center">
+                            <pre>{{this.id}}, {{this.burger_name}}</pre>
+                        </div>
+                        <div class="col-3 text-center">
+                            <form method= "POST" action="/burgers/update?_method=PUT" class="button-size">
+                            <input type="hidden" name="burger_id" type="text" value= {{this.id}}>
+                            <br>
+                            <button type="submit" class="btn btn-default">DEVOUR IT</button>
+                            </form>
+                        </div>
+                        {{/unless}}
+                        {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
